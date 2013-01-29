@@ -1,0 +1,129 @@
+body {
+  color: #eee;
+  font-family: Monospace;
+  font-size: 12px;
+  background-color: #f0f0f0;
+  margin: 0px;
+  overflow: hidden;
+}
+#container {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+#crosshair {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -2px 0 0 -2px;
+  width: 4px;
+  height: 4px;
+  background-color: #d00;
+  opacity: 0.5;
+}
+#instruct {
+  font-size: 80%;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #eee;
+  text-align: right;
+  position: fixed;
+  bottom: 10px;
+  left: 0px;
+  width: 100%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* toolbar */
+nav.bar-tab {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  margin: 0px;
+  padding: 0px;
+}
+nav.bar-tab ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav.bar-tab li {
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 3px;
+  margin: 0 5px 0 0;
+  list-style: none;
+  float: left;
+  width: 30px;
+  height: 30px;
+  font-size: 80%;
+  color: #ccc;
+  text-shadow: 1px 1px 1px #333;
+  box-shadow: 1px 1px 1px #333;
+  overflow: hidden;
+}
+nav.bar-tab li.active {
+  border: 1px solid #ffcc00;
+}
+nav.bar-tab a {
+  color: #ccc;
+  text-decoration: none;
+}
+nav.bar-tab li .tab-label {
+  padding-top: 5px;
+  font-size: 80%;
+  text-align: center;
+}
+nav.bar-tab li:nth-child(1) { background-image: url('textures/grass.png'); }
+nav.bar-tab li:nth-child(2) { background-image: url('textures/dirt.png'); }
+nav.bar-tab li:nth-child(3) { background-image: url('textures/obsidian.png'); }
+nav.bar-tab li:nth-child(4) { background-image: url('textures/plank.png'); }
+
+/* Share */
+.voxel-share {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -250px;
+  margin-top: -150px;
+  width: 500px;
+  background-color: #eee;
+  padding: 2px 2px 2px 2px;
+  -moz-box-shadow: 0 0 5px #333;
+  -webkit-box-shadow: 0 0 5px #333;
+  box-shadow: 0 0 5px #333;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+
+}
+.voxel-share img {
+  width: 100%;
+}
+.voxel-share textarea {
+  box-sizing: border-box;
+  margin: 3px 0px;
+  padding: 5px;
+  width: 75%;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  background-color: #ddd;
+  float: left;
+}
+.voxel-share button {
+  border: 1px solid #333;
+  margin: 5px;
+  background-color: #ddd;
+  width: 20%;
+  float: right;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}

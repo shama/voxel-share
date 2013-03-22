@@ -2,12 +2,13 @@ function Share(opts) {
   if (!(this instanceof Share)) return new Share(opts || {});
   if (opts.THREE) opts = {game:opts};
   if (!opts.key) throw new Error('Get a key: http://api.imgur.com/');
-  this.key     = opts.key;
-  this.game    = opts.game;
-  this.message = opts.message || 'Greetings from voxel.js! @voxeljs';
-  this.type    = opts.type    || 'image/png';
-  this.quality = opts.quality || 0.75;
-  this.opened  = false;
+  this.key      = opts.key;
+  this.game     = opts.game;
+  this.hashtags = opts.hashtags || '';
+  this.message  = opts.message || 'Greetings from voxel.js! @voxeljs';
+  this.type     = opts.type    || 'image/png';
+  this.quality  = opts.quality || 0.75;
+  this.opened   = false;
 }
 module.exports = Share;
 
@@ -31,20 +32,21 @@ Share.prototype.submit = function() {
   var self = this;
   var fd = new FormData();
   fd.append('image', String(this.image.src).split(',')[1]);
-  fd.append('key', this.key);
-  if (this.message) fd.append('caption', this.message);
+  if (this.message) fd.append('description', this.message);
   var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'http://api.imgur.com/2/upload.json');
+  xhr.open('POST', 'https://api.imgur.com/3/upload');
+  var auth = 'Client-ID ' + this.key
+  xhr.setRequestHeader('Authorization', auth);
   xhr.onload = function() {
     // todo: error check
-    self.tweet(JSON.parse(xhr.responseText).upload.links.imgur_page);
+    self.tweet(JSON.parse(xhr.responseText).data.link);
     self.close();
   };
   xhr.send(fd);
 };
 
 Share.prototype.tweet = function(imgUrl) {
-  var url = 'http://twitter.com/home?status=' + this.message + ' ' + imgUrl;
+  var url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(this.message) + ' ' + imgUrl + '&hashtags=' + this.hashtags
   window.open(url, 'twitter', 'width=550,height=450');
 };
 

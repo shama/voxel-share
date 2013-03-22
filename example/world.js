@@ -62,8 +62,8 @@ game.on('tick', sky);
 // create a share thing
 var share = require('../')({
   game: game,
-  // api key from imgur.com
-  key: '1e6b6f6b09df169bcdcbd86a52e869c5'
+  // api v3 key from imgur.com
+  key: ''
 });
 
 // if ctrl is pressed

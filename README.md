@@ -60,6 +60,7 @@ npm install voxel-share
 Use [browserify](http://browserify.org) to `require('voxel-share')`.
 
 ## release history
+* 0.2.0 - update to work with imgur api v3. Thanks @maxogden!
 * 0.1.0 - initial release
 
 ## license

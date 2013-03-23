@@ -1,7 +1,7 @@
 {
   "name": "voxel-share",
   "description": "Take a snapshot of voxel.js and share on imgur/twitter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/shama/voxel-share",
   "author": {
     "name": "Kyle Robinson Young",
@@ -25,7 +25,7 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "start": "echo \"open localhost:8081/\" && cd example && ../node_modules/.bin/browservefy world.js 8081 -- -d",
+    "start": "cd example && ../node_modules/.bin/browservefy world.js 8080 -- -d",
     "gh-pages": "cp -R ./example/* ./ && browserify world.js -o world.js"
   },
   "dependencies": {},
@@ -33,7 +33,7 @@
     "voxel-engine": "~0.3.2",
     "voxel-perlin-terrain": "0.0.5",
     "voxel-forest": "0.0.0",
-    "browservefy": "0.0.0",
+    "browservefy": "0.0.9",
     "voxel-sky": "~0.1.0",
     "toolbar": "0.0.2",
     "voxel-debris": "0.0.4"

@@ -17,7 +17,7 @@ var share = require('voxel-share')({
   // pass a copy of the game
   game: game,
 
-  // api key from http://imgur.com/register/api_anon
+  // api key from https://api.imgur.com/oauth2/addclient
   key: 'abcd1234',
 
   // specify a message to set as caption/tweet

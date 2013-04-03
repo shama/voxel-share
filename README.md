@@ -27,7 +27,13 @@ var share = require('voxel-share')({
   type: 'image/png',
 
   // quality of image. between 0 and 1
-  quality: 0.75
+  quality: 0.75,
+
+  // do something else with the image link after it's uploaded
+  afterUpload: function(imageLink) {
+    // Open the tweet dialog with image link
+    this.tweet(imageLink);
+  },
 });
 ```
 
@@ -60,6 +66,7 @@ npm install voxel-share
 Use [browserify](http://browserify.org) to `require('voxel-share')`.
 
 ## release history
+* 0.3.0 - Added afterUpload feature. Thanks @maxogden!
 * 0.2.0 - update to work with imgur api v3. Thanks @maxogden!
 * 0.1.0 - initial release
 

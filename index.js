@@ -9,9 +9,7 @@ function Share(opts) {
   this.type     = opts.type    || 'image/png';
   this.quality  = opts.quality || 0.75;
   this.opened   = false;
-  this.afterUpload = opts.afterUpload || function(link) {
-    this.tweet(link);
-  }.bind(this)
+  this.afterUpload = opts.afterUpload || this.tweet;
 }
 module.exports = Share;
 
@@ -42,8 +40,8 @@ Share.prototype.submit = function() {
   xhr.setRequestHeader('Authorization', auth);
   xhr.onload = function() {
     // todo: error check
-    var link = JSON.parse(xhr.responseText).data.link
-    self.afterUpload(link)
+    var link = JSON.parse(xhr.responseText).data.link;
+    self.afterUpload.call(self, link);
   };
   xhr.send(fd);
 };

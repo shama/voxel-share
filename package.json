@@ -1,7 +1,7 @@
 {
   "name": "voxel-share",
   "description": "Take a snapshot of voxel.js and share on imgur/twitter",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "homepage": "https://github.com/shama/voxel-share",
   "author": {
     "name": "Kyle Robinson Young",
